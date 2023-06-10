@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 //Pause game by additive scene
+//=========================================================================================================//
     public void PauseGame()
     {
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
@@ -19,8 +20,8 @@ public class GameManager : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0, LoadSceneMode.Single);
-        Time.timeScale = 1;
+        Time.timeScale = 1; //timeScale need to be back to normal
     }
-
+//=========================================================================================================//
 
 }

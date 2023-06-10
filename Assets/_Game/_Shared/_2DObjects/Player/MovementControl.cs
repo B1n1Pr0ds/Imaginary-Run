@@ -16,8 +16,7 @@ public class MovementControl : MonoBehaviour
 
     //Select in the inspector to tell the distance between the ground and the character
     [SerializeField] private Transform playerFeet;
-
-    [SerializeField]
+    
     //=========================================================================================================//
 
     //=========================================================================================================//
@@ -36,7 +35,10 @@ public class MovementControl : MonoBehaviour
     //=========================================================================================================//
     [Header("Character Stats")] [SerializeField] [Range(1, 15)]
     float jumpForce = 10f;
-
+    //=========================================================================================================//
+    
+    
+    //Unity Engine
     //=========================================================================================================//
     private void Start()
     {
@@ -69,6 +71,11 @@ public class MovementControl : MonoBehaviour
                 {
                     Roll();
                 }
+                
+                Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                newPosition.z = 0;
+                Move(newPosition);
+                
 
             }
         }
@@ -108,6 +115,18 @@ public class MovementControl : MonoBehaviour
         Debug.Log("Rolled"); 
         StartCoroutine(RollCoolDown());
     }
+
+    private void Move(Vector3 xPosition)
+    {
+        Debug.Log(xPosition);
+        transform.position = xPosition;
+    }
+
+
+
+
+    //Adjust Functions
+    //=========================================================================================================//
 
     private IEnumerator RollCoolDown()
     {
