@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class MovementControl : MonoBehaviour
 
     //Select in the inspector to tell the distance between the ground and the character
     [SerializeField] private Transform playerFeet;
+
+    [SerializeField] private Transform floorLevel;
     
     //=========================================================================================================//
 
@@ -74,8 +77,11 @@ public class MovementControl : MonoBehaviour
                 
                 Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 newPosition.z = 0;
-                Move(newPosition);
-                
+                newPosition.y = floorLevel.position.y;
+                while (touch.deltaTime > 0.25)
+                {
+                    Move(newPosition);
+                }
 
             }
         }
