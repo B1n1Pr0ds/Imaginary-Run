@@ -77,8 +77,8 @@ public class MovementControl : MonoBehaviour
                 
                 Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 newPosition.z = 0;
-                newPosition.y = floorLevel.position.y;
-                while (touch.deltaTime > 0.25)
+                newPosition.y = floorLevel.position.y; 
+                if(touch.deltaTime > 0.25)
                 {
                     Move(newPosition);
                 }
