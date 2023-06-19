@@ -1,23 +1,34 @@
 
 
+
+
 using System;
 using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
         [SerializeField] private float carSpeed;
-        [SerializeField] private LayerMask enemyDestroyerLayer;
         private void Update()
         {
-                transform.position = new Vector3(transform.position.x-carSpeed, transform.position.y, transform.position.z);
+                Move();
         }
 
-
-        private void OnTriggerEnter(Collider other)
+        private void Move()
         {
-            if (other.gameObject.layer == enemyDestroyerLayer) ;
-            {
-                Debug.Log("Collided");
-            }
+                transform.position = new Vector3(transform.position.x - carSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+                if (other.gameObject.tag == "EnemyDestroyerTag")
+                {
+                        Destroy(gameObject);
+                }
+            
+                Debug.Log("collided" + other.gameObject.layer);
+              
+               
+            
+        }
+        
 }

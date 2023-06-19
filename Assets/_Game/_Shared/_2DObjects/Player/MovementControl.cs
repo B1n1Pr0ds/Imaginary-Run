@@ -30,7 +30,9 @@ public class MovementControl : MonoBehaviour
     private Animator playerAnimator;
     private Rigidbody2D playerRB;
     private bool canRoll = true;
+    private bool canJump = true;
     private float rollCoolDown = 1f;
+    private float jumpCoolDown = 1f;
 
 
     //=========================================================================================================//
@@ -105,7 +107,13 @@ public class MovementControl : MonoBehaviour
 
     private void Jump()
     {
+        if (!canJump)
+        {
+            return;
+        }
+        
         playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        StartCoroutine(JumpCoolDown());
     }
 
     private void Roll()
@@ -139,5 +147,11 @@ public class MovementControl : MonoBehaviour
         canRoll = false;
         yield return new WaitForSeconds(rollCoolDown);
         canRoll = true;
+    }
+    private IEnumerator JumpCoolDown()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(jumpCoolDown);
+        canJump = true;
     }
 }
