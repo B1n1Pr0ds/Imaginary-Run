@@ -1,11 +1,14 @@
 
 using System;
 using UnityEngine;
+using PlatformUtility = Unity.VisualScripting.PlatformUtility;
 
 public class TruckScript : MonoBehaviour
 {
     [SerializeField] private float truckSpeed;
 
+    
+    private PlayerScore ps;
 
     private Rigidbody2D rb;
 
@@ -13,6 +16,7 @@ public class TruckScript : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
@@ -32,10 +36,19 @@ public class TruckScript : MonoBehaviour
             Destroy(gameObject);
         }
             
-        Debug.Log("collided" + other.gameObject.layer);
-
+        Debug.Log("collided " + other.gameObject.layer);
+        
+      
 
       
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            ps = other.gameObject.GetComponent<PlayerScore>();
+            ps.Die();
+        }
+    }
 }

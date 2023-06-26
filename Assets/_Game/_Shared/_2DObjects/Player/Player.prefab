@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 335358442450179113}
   - component: {fileID: 335358442450179126}
   - component: {fileID: 335358442450179125}
+  - component: {fileID: 5484170684763622155}
   - component: {fileID: 335358442450179124}
   - component: {fileID: 335358442450179123}
   m_Layer: 0
@@ -75,8 +76,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerFeet: {fileID: 335358443721296436}
-  playerBC: {fileID: 335358442450179124}
+  floorLevel: {fileID: 0}
   jumpForce: 10
+--- !u!114 &5484170684763622155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335358442450179114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef1f58678fa8ca46a3a5e8a5d66e33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &335358442450179124
 BoxCollider2D:
   m_ObjectHideFlags: 0

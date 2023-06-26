@@ -2,12 +2,18 @@
 
 
 
+
 using System;
 using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
+       
         [SerializeField] private float carSpeed;
+
+        private PlayerScore ps;
+
+   
         private void Update()
         {
                 Move();
@@ -17,6 +23,7 @@ public class CarScript : MonoBehaviour
         {
                 transform.position = new Vector3(transform.position.x - carSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
+        
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -25,10 +32,21 @@ public class CarScript : MonoBehaviour
                         Destroy(gameObject);
                 }
             
-                Debug.Log("collided" + other.gameObject.layer);
+                Debug.Log("collided " + other.gameObject.layer);
+                
               
                
             
         }
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+                if (other.gameObject.tag == "Player")
+                {
+                        ps = other.gameObject.GetComponent<PlayerScore>();
+                        ps.Die();
+                }
+        }
+
+
         
 }
