@@ -9,9 +9,9 @@ public class UI_Display : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTxt;
     [SerializeField] private TextMeshProUGUI distanceTxt;
 
-    private void SetScore(int _score)
+    private void SetScore(float _score)
     {
-        scoreTxt.text = "Score: " + _score + " Points ";
+        scoreTxt.text = "Score: " + (int)_score + " Points ";
     }
 
     private void SetDistance(float _distance)

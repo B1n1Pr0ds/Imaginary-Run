@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -29,18 +30,38 @@ public class GameManager : MonoBehaviour
 //=========================================================================================================//
 public float distance = 1f;
 private int internalDistance = 1;
-public int score = 0;
-
+public float score = 0f;
+[SerializeField] [Range(10,100)] private float  distanceToStartScoring;
+[Range(0,100)] public int  scorebyDistanceValue;
+[SerializeField] private GameObject addedScoreTextGO;
+[SerializeField] private TextMeshPro addedScoreText;
+[SerializeField] private Transform scoreTransform;
 
 private float AddDistance()
 {
     distance += Time.deltaTime;
     return distance;
+    
+}
+
+private void addScorebyDistance()
+{
+    if (internalDistance < distanceToStartScoring) 
+        return;
+    
+    
+    score += scorebyDistanceValue * Time.deltaTime;
+
 }
 
 public void AddScore(int _value)
 {
     score += _value;
+    Instantiate(addedScoreTextGO, scoreTransform);
+    addedScoreText = addedScoreTextGO.GetComponent<TextMeshPro>();
+    addedScoreText.text = " +" + _value;
+
+
 }
 
 
@@ -50,15 +71,11 @@ private void Update()
 {
     AddDistance();
     internalDistance = (int)distance;
-    if (internalDistance % 10 == 0)
-    {
-        AddScore(1);
-    }
+    addScorebyDistance();
+    
 
-    if (internalDistance > 100)
-    {
-        AddScore(1);
-    }
+
+
 
 }
 }

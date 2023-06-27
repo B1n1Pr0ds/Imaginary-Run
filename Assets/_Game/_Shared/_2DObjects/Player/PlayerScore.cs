@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
+    [SerializeField] [Range(1, 10)] public int scoreToAdd;
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] private GameManager gm;
     public void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
     }
@@ -17,7 +18,7 @@ public class PlayerScore : MonoBehaviour
     {
         if (other.gameObject.tag == "ScoreCollider")
         {
-            gm.AddScore(1);
+            gm.AddScore(scoreToAdd);
         }
     }
 }
