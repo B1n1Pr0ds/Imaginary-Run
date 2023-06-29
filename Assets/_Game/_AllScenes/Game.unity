@@ -2829,6 +2829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 335358442450179114, guid: eb44f87e29e9dbd44b37dcd31c119608, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 335358442450179123, guid: eb44f87e29e9dbd44b37dcd31c119608, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2869,5 +2873,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 950878990}
+    - target: {fileID: 5755385445666547399, guid: eb44f87e29e9dbd44b37dcd31c119608, type: 3}
+      propertyPath: imortalLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb44f87e29e9dbd44b37dcd31c119608, type: 3}
