@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 335358442450179126}
   - component: {fileID: 335358442450179125}
   - component: {fileID: 5484170684763622155}
+  - component: {fileID: 5755385445666547399}
   - component: {fileID: 335358442450179124}
   - component: {fileID: 335358442450179123}
   m_Layer: 0
@@ -93,6 +94,19 @@ MonoBehaviour:
   scoreToAdd: 0
   gameOverScreen: {fileID: 0}
   gm: {fileID: 0}
+--- !u!114 &5755385445666547399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335358442450179114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6fd5a507cf0b34e846877946d5f2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pa: {fileID: 0}
 --- !u!61 &335358442450179124
 BoxCollider2D:
   m_ObjectHideFlags: 0

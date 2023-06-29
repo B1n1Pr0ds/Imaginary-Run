@@ -8,12 +8,16 @@ using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
-       
         [SerializeField] private float carSpeed;
-
+       
         private PlayerScore ps;
 
-   
+
+        private void Start()
+        {
+;
+        }
+
         private void Update()
         {
                 Move();
@@ -44,6 +48,11 @@ public class CarScript : MonoBehaviour
                 {
                         ps = other.gameObject.GetComponent<PlayerScore>();
                         ps.Die();
+                }
+
+                if (other.gameObject.tag == "Imortal")
+                {
+                       
                 }
         }
 
