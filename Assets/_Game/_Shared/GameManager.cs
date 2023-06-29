@@ -34,7 +34,7 @@ public float score = 0f;
 [SerializeField] [Range(10,100)] private float  distanceToStartScoring;
 [Range(0,100)] public int  scorebyDistanceValue;
 [SerializeField] private GameObject addedScoreTextGO;
-[SerializeField] private TextMeshPro addedScoreText;
+[SerializeField] private TextMeshProUGUI addedScoreText;
 [SerializeField] private Transform scoreTransform;
 
 private float AddDistance()
@@ -56,12 +56,19 @@ private void addScorebyDistance()
 
 public void AddScore(int _value)
 {
+    
     score += _value;
-    Instantiate(addedScoreTextGO, scoreTransform);
-    addedScoreText = addedScoreTextGO.GetComponent<TextMeshPro>();
+    addedScoreText = AddedTextScore().GetComponent<TextMeshProUGUI>();
     addedScoreText.text = " +" + _value;
+  
 
 
+}
+
+private GameObject AddedTextScore()
+{
+    GameObject addedScoreTxt_ = Instantiate(addedScoreTextGO, scoreTransform);
+    return addedScoreTxt_;
 }
 
 

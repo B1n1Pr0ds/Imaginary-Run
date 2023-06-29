@@ -19,7 +19,7 @@ public class MovementControl : MonoBehaviour
     [SerializeField] private Transform playerFeet;
 
     [SerializeField] private Transform floorLevel;
-    
+
     //=========================================================================================================//
 
     //=========================================================================================================//
@@ -33,6 +33,7 @@ public class MovementControl : MonoBehaviour
     private bool canJump = true;
     private float rollCoolDown = 1f;
     private float jumpCoolDown = 1f;
+    
 
 
     //=========================================================================================================//

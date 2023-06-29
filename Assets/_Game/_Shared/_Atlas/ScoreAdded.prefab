@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7834221503326788961}
   - component: {fileID: 1900799599631457308}
   - component: {fileID: 1502709613776722817}
+  - component: {fileID: 9121809332937261283}
   - component: {fileID: 305679846325489300}
   m_Layer: 0
   m_Name: ScoreAdded
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 50, y: -6.3511}
-  m_SizeDelta: {x: 100, y: 37.2979}
+  m_SizeDelta: {x: 501.8, y: 315.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1900799599631457308
 CanvasRenderer:
@@ -94,13 +95,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -136,6 +137,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &9121809332937261283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916408381383267105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcd3771fe5b37d48ab59b34daa6451f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &305679846325489300
 Animator:
   serializedVersion: 4
