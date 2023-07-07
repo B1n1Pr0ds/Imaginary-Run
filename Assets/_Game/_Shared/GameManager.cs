@@ -28,13 +28,16 @@ public class GameManager : MonoBehaviour
     
 //Score and distance count
 //=========================================================================================================//
+[Header("Score Options")]
 public float distance = 1f;
 private int internalDistance = 1;
 public float score = 0f;
 [SerializeField] [Range(10,100)] private float  distanceToStartScoring;
 [Range(0,100)] public int  scorebyDistanceValue;
+
+[Header("Score UI sets")]
 [SerializeField] private GameObject addedScoreTextGO;
-[SerializeField] private TextMeshProUGUI addedScoreText;
+private TextMeshProUGUI addedScoreText;
 [SerializeField] private Transform scoreTransform;
 
 private float AddDistance()

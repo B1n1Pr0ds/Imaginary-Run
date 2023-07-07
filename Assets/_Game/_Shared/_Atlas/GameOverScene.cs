@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+
 public class GameOverScene : MonoBehaviour
 {
     [SerializeField] private GameObject player;
@@ -24,11 +25,14 @@ public class GameOverScene : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    
     public void WatchAAd()
     {
+        Ads.instance.LoadAd();
+        
         player.transform.position = respawnPoint.position;
-        player.gameObject.SetActive(true);
         gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
         imps.PlayerImortal();
         Time.timeScale = 1;
 

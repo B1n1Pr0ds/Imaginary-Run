@@ -65,6 +65,8 @@ public class MovementControl : MonoBehaviour
             playerAnimator.SetBool("IsGoingDown", false);
             playerAnimator.SetBool("IsRunning", true);
 
+          
+
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -103,6 +105,13 @@ public class MovementControl : MonoBehaviour
         }
 
     }
+
+    void OnEnable()
+    {
+        canRoll = true;
+        canJump = true;
+    }
+    
     //exec movement
     //=========================================================================================================//
 
