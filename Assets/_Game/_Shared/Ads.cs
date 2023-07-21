@@ -1,5 +1,7 @@
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
@@ -7,7 +9,7 @@ using GoogleMobileAds.Api;
 public class Ads : MonoBehaviour
 {
     public static Ads instance;
-
+    public float adTime;
 
 
 
@@ -66,13 +68,15 @@ public class Ads : MonoBehaviour
         // Create a 320x50 banner at top of the screen
 // Use the AdSize argument to set a custom size for the ad.
        
-        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Bottom);
+        _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Center);
     }
     /// <summary>
     /// Creates the banner view and loads a banner ad.
     /// </summary>
     public void LoadAd()
     {
+        
+        
         // create an instance of a banner view first.
         if(_bannerView == null)
         {
@@ -85,6 +89,9 @@ public class Ads : MonoBehaviour
         // send the request to load the ad.
         Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
+        
+        StartCoroutine(AdTimer());
+      
     }
     
     /// <summary>
@@ -97,6 +104,7 @@ private void ListenToAdEvents()
     {
         Debug.Log("Banner view loaded an ad with response : "
             + _bannerView.GetResponseInfo());
+     
     };
     // Raised when an ad fails to load into the banner view.
     _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
@@ -143,11 +151,16 @@ private void ListenToAdEvents()
             Debug.Log("Destroying banner ad.");
             _bannerView.Destroy();
             _bannerView = null;
+
         }
     }
-    
-    
-    
+
+    private IEnumerator AdTimer()
+    {
+        yield return new WaitForSeconds(adTime);
+        DestroyAd();
+    }
+
 }
     
 

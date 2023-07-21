@@ -9,7 +9,8 @@ public class GameOverScene : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Transform respawnPoint;
-
+    public float adTime;
+    private Ads ads;
 
     private ImmortalPlayerScript imps;
 
@@ -17,6 +18,7 @@ public class GameOverScene : MonoBehaviour
     private void Start()
     {
         imps = player.GetComponent<ImmortalPlayerScript>();
+        ads = Ads.instance;
     }
 
     public void ReloadScene()
@@ -28,8 +30,7 @@ public class GameOverScene : MonoBehaviour
     
     public void WatchAAd()
     {
-        Ads.instance.LoadAd();
-        
+        ads.LoadAd();
         player.transform.position = respawnPoint.position;
         gameObject.SetActive(false);
         player.gameObject.SetActive(true);

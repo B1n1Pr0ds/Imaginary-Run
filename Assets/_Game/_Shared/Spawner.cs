@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     
 
 
-    private float spawnCooldown = 5f;
+    private float spawnCooldown;
     private bool shouldSpawn = true;
 
     private void Spawn()
@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         if(!shouldSpawn)
             return;
 
-
+        spawnCooldown = Random.Range(2.5f, 7f);
         int n = Random.Range(0, whatToSpawn.Length);
         Instantiate(whatToSpawn[n], spawnPoint);
         StartCoroutine(SpawnCooldown());

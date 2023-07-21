@@ -1847,6 +1847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 950878990}
   respawnPoint: {fileID: 1152745833}
+  adTime: 0
 --- !u!4 &1138191182
 Transform:
   m_ObjectHideFlags: 0
@@ -2133,7 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 0
   score: 0
-  distanceToStartScoring: 100
+  distanceToStartScoring: 10
   scorebyDistanceValue: 1
   addedScoreTextGO: {fileID: 6916408381383267105, guid: a22272c895248944c9ab86d92041715b, type: 3}
   scoreTransform: {fileID: 621543552}
@@ -2328,7 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2524,6 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971ec5cb424962947ab6c557b5f35c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adTime: 2.5
 --- !u!4 &1790510305
 Transform:
   m_ObjectHideFlags: 0
